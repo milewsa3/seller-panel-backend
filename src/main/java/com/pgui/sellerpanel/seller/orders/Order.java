@@ -19,6 +19,8 @@ public class Order {
     @Id
     Long id;
 
+    String type;
+
     String itemFullName;
 
     String imgUrl;
