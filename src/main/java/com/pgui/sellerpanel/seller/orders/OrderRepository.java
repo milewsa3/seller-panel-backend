@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderRepository extends PagingAndSortingRepository<Order, Long> {
     Page<Order> findAllByType(String type, Pageable pageable);
+
+    Long countByType(String type);
 }

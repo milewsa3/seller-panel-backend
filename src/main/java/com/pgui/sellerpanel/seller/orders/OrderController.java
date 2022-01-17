@@ -27,4 +27,17 @@ public class OrderController {
         Pageable pageable = PageRequest.of(page, 5);
         return repository.findAllByType(type, pageable);
     }
+
+    @GetMapping("/count")
+    public OrderCounts countOrders() {
+        Long notSendCount = repository.countByType("not-send");
+        Long unpaidCount = repository.countByType("unpaid");
+        Long returnsCount = repository.countByType("returns");
+
+        return OrderCounts.builder()
+                .notSendCount(notSendCount)
+                .unpaidCount(unpaidCount)
+                .returnsCount(returnsCount)
+                .build();
+    }
 }
