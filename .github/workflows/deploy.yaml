@@ -1,5 +1,6 @@
 name: Deploy to Azure Web App
 
+
 env:
   AZURE_WEBAPP_NAME: seller-panel-backend
   JAVA_VERSION: '11'
